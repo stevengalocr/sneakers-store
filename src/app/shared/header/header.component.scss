@@ -1,0 +1,45 @@
+@use '../../../styles.scss' as *;
+@use 'sass:color';	
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+
+    .logo {
+        width: 120px;
+        height: 40px;
+        background: url('../../../assets/icons/wgas.jpg') no-repeat center center;
+        background-size: contain;
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .instagram-btn {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            background: url('../../../assets/icons/instagram.svg') no-repeat center center;
+            background-size: contain;
+        }
+
+        .menu-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+    }
+}
+
+.top-bar {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}

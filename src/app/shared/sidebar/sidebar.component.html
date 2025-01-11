@@ -1,0 +1,18 @@
+<div class="sidebar-overlay" *ngIf="isOpen" (click)="closeSidebar()"></div>
+
+<div class="sidebar" [class.open]="isOpen">
+    <button class="close-btn" (click)="closeSidebar()">&times;</button>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Tienda</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="social-icons">
+        <a href="https://www.instagram.com/wegotallstore_sg/" target="_blank">Instagram</a>
+    </div>
+</div>

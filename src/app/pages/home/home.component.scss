@@ -1,0 +1,72 @@
+@use '../../../styles.scss' as *;
+@use 'sass:color';
+
+.home-container {
+    position: relative;
+    height: 100vh;
+    max-height: 600px; // Limita la altura máxima
+    background: url('../../../assets/images/home-banner.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; // Evita desbordamientos
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        border-radius: 8px;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: $secondary-color;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: $secondary-color;
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            border: 1px solid $secondary-color;
+            background: transparent;
+            color: $secondary-color;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: $secondary-color;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// Responsive design for mobile
+@media (max-width: 768px) {
+    .home-container {
+        height: 100vh;  // Consistente con desktop
+        max-height: 500px; // Un poco más pequeño en móvil
+
+        .overlay {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    }
+}
