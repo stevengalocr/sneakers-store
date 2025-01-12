@@ -10,7 +10,7 @@ import { productsExtra } from '../../data/products-extra';
   standalone: true,
 })
 export class ProductExtraComponent {
-    products = productsExtra;
+    products = this.shuffleArray([...productsExtra]);
     initialProducts = window.innerWidth <= 768 ? 3 : 4; // Carga 3 en móvil, 4 en web
     visibleProducts = [...this.products.slice(0, this.initialProducts)];
 
@@ -22,5 +22,9 @@ export class ProductExtraComponent {
 
     showLessProducts(): void {
         this.visibleProducts = [...this.products.slice(0, this.initialProducts)];
+    }
+
+    shuffleArray(array: any[]): any[] {
+        return array.sort(() => Math.random() - 0.5);
     }
 }

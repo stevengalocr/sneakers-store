@@ -2,8 +2,22 @@
 @use 'sass:color';
 
 .store-container {
-    margin-top: 75px;
+    margin-top: 130px !important;
+    text-align: center;
+    
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .catalog-description {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 2rem;
+    }
 }
+
 .product-grid-container {
     text-align: center;
     padding: 2rem;
@@ -23,14 +37,13 @@
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr); // 6 productos por fila en portátiles
     gap: 2rem;
     justify-content: center;
     padding: 1rem;
 
     @media (max-width: 768px) {
-        // Solo 3 productos por fila en móvil
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(2, 1fr); // 2 productos por fila en móviles
     }
 }
 
@@ -43,6 +56,10 @@
     text-align: center;
     position: relative;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto; 
 
     &:hover {
         transform: scale(1.05);
@@ -80,11 +97,11 @@
     .product-description {
         font-size: 0.9rem;
         color: #555;
-        margin-bottom: 1rem;
+        flex-grow: 1; 
     }
 
     .instagram-button {
-        display: inline-block;
+        display: block;
         padding: 0.8rem 1.5rem;
         background: $primary-color;
         color: white;
@@ -92,6 +109,7 @@
         border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
+        margin-top: 1rem;
         transition: background 0.3s ease;
 
         &:hover {
@@ -108,17 +126,28 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 2rem;
+    margin: 2rem auto; 
     font-size: 1rem;
-
+    display: block;
+    
     &:hover {
         background: color.scale($primary-color, $lightness: -10%);
     }
 }
 
-// Responsive Design: Solo 1 producto en móvil
+// Responsive Design: Solo 2 productos en móvil
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+.search-bar {
+    width: 90%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 1.5rem auto;
+    font-size: 1rem;
+    display: block; 
 }

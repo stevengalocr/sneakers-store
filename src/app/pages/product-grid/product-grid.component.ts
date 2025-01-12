@@ -10,7 +10,7 @@ import { products } from '../../data/products-data';
   imports: [CommonModule]
 })
 export class ProductGridComponent {
-    products = products;
+    products = this.shuffleArray([...products]);
     initialProducts = window.innerWidth <= 768 ? 3 : 4; // Carga 3 en móvil, 4 en web
     visibleProducts = [...this.products.slice(0, this.initialProducts)];
 
@@ -22,5 +22,9 @@ export class ProductGridComponent {
 
     showLessProducts(): void {
         this.visibleProducts = [...this.products.slice(0, this.initialProducts)];
+    }
+
+    shuffleArray(array: any[]): any[] {
+        return array.sort(() => Math.random() - 0.5);
     }
 }

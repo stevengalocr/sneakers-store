@@ -10,5 +10,5 @@ import { RouterModule } from '@angular/router';
     imports: [SidebarComponent, RouterModule]
 })
 export class HeaderComponent {
-    instagramLink: string = 'https://www.instagram.com/wegotallstore_sg/';
+    instagramLink: string = 'https://www.instagram.com/wegotallstore_cr/';
 }
