@@ -80,6 +80,6 @@ a {
     transition: color 0.3s;
 
     &:hover {
-        color: lighten($secondary-color, 20%);
+        color: color.scale($secondary-color, $lightness: 20%);
     }
 }

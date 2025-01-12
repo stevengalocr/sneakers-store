@@ -29,7 +29,7 @@ export class StoreComponent {
   }
 
   productsExtras = productsExtra;
-      initialProductsExtras = window.innerWidth <= 768 ? 3 : 4; // Carga 3 en móvil, 4 en web
+      initialProductsExtras = window.innerWidth <= 768 ? 3 : 4;
       visibleProductsExtras = [...this.productsExtras.slice(0, this.initialProductsExtras)];
   
       loadMoreProductsExtras(): void {
