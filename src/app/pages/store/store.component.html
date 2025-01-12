@@ -1,53 +1,55 @@
-<div class="product-grid-container">
-    <h2>CATÁLOGO DE SNEAKERS</h2>
-    <p class="catalog-description">
-        Escríbenos para cotizar o comprar cualquiera de nuestros productos. ¡Te esperamos! Te traemos cualquier sneaker o prenda exclusiva que desees.
-    </p>
-    
-    <div class="product-grid">
-        <div class="product-card" *ngFor="let product of visibleProducts">
-            <div class="product-image">
-                <img [src]="product.image" [alt]="product.name" class="main-image">
-                <img [src]="product.imageHover" [alt]="product.name" class="hover-image">
+<div class="store-container">
+    <!-- SNEAKERS -->
+    <div class="product-grid-container">
+        <h2>CATÁLOGO DE SNEAKERS</h2>
+        <p class="catalog-description">
+            Escríbenos para cotizar o comprar cualquiera de nuestros productos. ¡Te esperamos! Te traemos cualquier sneaker o prenda exclusiva que desees.
+        </p>
+        
+        <div class="product-grid">
+            <div class="product-card" *ngFor="let product of visibleProducts">
+                <div class="product-image">
+                    <img [src]="product.image" [alt]="product.name" class="main-image">
+                    <img [src]="product.imageHover" [alt]="product.name" class="hover-image">
+                </div>
+                <p class="product-name">{{ product.name }}</p>
+                <p class="product-description">{{ product.description }}</p>
+                <a class="instagram-button" [href]="product.link" target="_blank">¡Escríbenos ahora!</a>
             </div>
-            <p class="product-name">{{ product.name }}</p>
-            <p class="product-description">{{ product.description }}</p>
-            <a class="instagram-button" [href]="product.link" target="_blank">¡Escríbenos ahora!</a>
         </div>
+        
+        <button class="load-more-button" (click)="loadMoreProducts()" *ngIf="visibleProducts.length < products.length">
+            Ver más productos
+        </button>
+        <button class="load-less-button" (click)="showLessProducts()" *ngIf="visibleProducts.length > initialProducts">
+            Ver menos productos
+        </button>
     </div>
-
-    <!-- Botones de Ver Más y Ver Menos -->
-    <button class="load-more-button" (click)="loadMoreProducts()" *ngIf="visibleProducts.length < products.length">
-        Ver más productos
-    </button>
-    <button class="load-less-button" (click)="showLessProducts()" *ngIf="visibleProducts.length > initialProducts">
-        Ver menos productos
-    </button>
-</div>
-
-<div class="product-grid-container">
-    <h2>CATÁLOGO DE PRENDAS EXTRAS</h2>
-    <p class="catalog-description">
-        También traemos cualquier tipo de prenda exclusiva, relojes o cosas que no encuentres en otro lugar.
-    </p>
-    
-    <div class="product-grid">
-        <div class="product-card" *ngFor="let product of visibleProductsExtras">
-            <div class="product-image">
-                <img [src]="product.image" [alt]="product.name" class="main-image">
-                <img [src]="product.imageHover" [alt]="product.name" class="hover-image">
+    <!-- EXTRAS -->
+    <div class="product-grid-container">
+        <h2>CATÁLOGO DE PRENDAS EXTRAS</h2>
+        <p class="catalog-description">
+            También traemos cualquier tipo de prenda exclusiva, relojes o cosas que no encuentres en otro lugar.
+        </p>
+        
+        <div class="product-grid">
+            <div class="product-card" *ngFor="let productExtras of visibleProductsExtras">
+                <div class="product-image">
+                    <img [src]="productExtras.image" [alt]="productExtras.name" class="main-image">
+                    <img [src]="productExtras.imageHover" [alt]="productExtras.name" class="hover-image">
+                </div>
+                <p class="product-name">{{ productExtras.name }}</p>
+                <p class="product-description">{{ productExtras.description }}</p>
+                <a class="instagram-button" [href]="productExtras.link" target="_blank">¡Escríbenos ahora!</a>
             </div>
-            <p class="product-name">{{ product.name }}</p>
-            <p class="product-description">{{ product.description }}</p>
-            <a class="instagram-button" [href]="product.link" target="_blank">¡Escríbenos ahora!</a>
         </div>
+        
+        <button class="load-more-button" (click)="loadMoreProductsExtras()" *ngIf="visibleProductsExtras.length < productsExtras.length">
+            Ver más productos
+        </button>
+        <button class="load-less-button" (click)="showLessProductsExtras()" *ngIf="visibleProductsExtras.length > initialProductsExtras">
+            Ver menos productos
+        </button>
     </div>
-
-    <!-- Botones de Ver Más y Ver Menos -->
-    <button class="load-more-button" (click)="loadMoreProductsExtras()" *ngIf="visibleProductsExtras.length < products.length">
-        Ver más productos
-    </button>
-    <button class="load-less-button" (click)="showLessProductsExtras()" *ngIf="visibleProductsExtras.length > initialProductsExtras">
-        Ver menos productos
-    </button>
 </div>
+    

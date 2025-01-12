@@ -4,8 +4,8 @@
 .home-container {
     position: relative;
     height: 100vh;
-    max-height: 600px; 
-    background: url('../../../assets/images/home-banner.jpg') no-repeat center center;
+    max-height: 94vh; 
+    background: url('../../../assets/images/about-us-banner.jpg') no-repeat center center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,6 +19,7 @@
         background: rgba(0, 0, 0, 0.5);
         padding: 2rem;
         border-radius: 8px;
+        max-width: 80%;
 
         h1 {
             font-size: 3rem;
@@ -33,9 +34,8 @@
         }
 
         button {
-            margin-top: 2rem;
+            margin-top: 1rem;
             padding: 0.8rem 2rem;
-            border: 1px solid $secondary-color;
             background: transparent;
             color: $secondary-color;
             cursor: pointer;
@@ -52,9 +52,11 @@
 @media (max-width: 768px) {
     .home-container {
         height: 100vh; 
-        max-height: 500px; 
-
+        max-height: 94vh; 
+        
         .overlay {
+            max-width: 80%;
+
             h1 {
                 font-size: 2rem;
             }
@@ -67,5 +69,17 @@
                 padding: 0.6rem 1.5rem;
             }
         }
+    }
+}
+
+a {
+    color: $secondary-color;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+        color: lighten($secondary-color, 20%);
     }
 }

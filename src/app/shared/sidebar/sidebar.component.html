@@ -5,10 +5,9 @@
     
     <nav>
         <ul>
-            <li (click)="closeSidebar()"><a routerLink="/">Inicio</a></li>
-            <li (click)="closeSidebar()"><a routerLink="/tienda">Tienda</a></li>
-            <li (click)="closeSidebar()"><a routerLink="/nosotros">Nosotros</a></li>
-            <li (click)="closeSidebar()"><a routerLink="/contacto">Contacto</a></li>
+            <li (click)="closeSidebar()"><a [routerLink]="['']">Inicio</a></li>
+            <li (click)="closeSidebar()"><a [routerLink]="['/tienda']">Tienda</a></li>
+            <li (click)="closeSidebar()"><a [routerLink]="['/nosotros']">Nosotros</a></li>
         </ul>
     </nav>
 
