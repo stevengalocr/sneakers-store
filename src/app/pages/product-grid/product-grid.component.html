@@ -1,0 +1,26 @@
+<div class="product-grid-container">
+    <h2>CATÁLOGO DE SNEAKERS</h2>
+    <p class="catalog-description">
+        Escríbenos para cotizar o comprar cualquiera de nuestros productos. ¡Te esperamos! Te traemos cualquier sneaker o prenda exclusiva que desees.
+    </p>
+    
+    <div class="product-grid">
+        <div class="product-card" *ngFor="let product of visibleProducts">
+            <div class="product-image">
+                <img [src]="product.image" [alt]="product.name" class="main-image">
+                <img [src]="product.imageHover" [alt]="product.name" class="hover-image">
+            </div>
+            <p class="product-name">{{ product.name }}</p>
+            <p class="product-description">{{ product.description }}</p>
+            <a class="instagram-button" [href]="product.link" target="_blank">¡Escríbenos ahora!</a>
+        </div>
+    </div>
+
+    <!-- Botones de Ver Más y Ver Menos -->
+    <button class="load-more-button" (click)="loadMoreProducts()" *ngIf="visibleProducts.length < products.length">
+        Ver más productos
+    </button>
+    <button class="load-less-button" (click)="showLessProducts()" *ngIf="visibleProducts.length > initialProducts">
+        Ver menos productos
+    </button>
+</div>
